@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: docker
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - 4000:8080
+  redis:
+    image: redis
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+  # mysql:
